@@ -8,18 +8,21 @@ module.exports = async function (req, res) {
   const { name, email, phone, role, message } = req.body;
 
   try {
+    const user = (process.env.SMTP_USER || '').trim();
+    const pass = (process.env.SMTP_PASS || '').trim();
+
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 465,
+      host: (process.env.SMTP_HOST || 'smtp.gmail.com').trim(),
+      port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT.trim()) : 465,
       secure: true,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: user,
+        pass: pass,
       },
     });
 
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`,
+      from: `"${name}" <${user}>`,
       replyTo: email,
       to: 'info@soltikz.com',
       subject: `New Contact Form Submission from ${name}`,
