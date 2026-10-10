@@ -22,11 +22,17 @@ module.exports = async function (req, res) {
     });
 
     const mailOptions = {
-      from: `"${name}" <${user}>`,
+      from: `"SolTikz Website" <${user}>`,
       replyTo: email,
       to: 'info@soltikz.com',
       subject: `New Contact Form Submission from ${name}`,
       text: `You have received a new message from the SolTikz contact form:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nRole: ${role}\nMessage:\n${message}`,
+      html: `<p>You have received a new message from the SolTikz contact form:</p>
+             <p><strong>Name:</strong> ${name}<br>
+             <strong>Email:</strong> ${email}<br>
+             <strong>Phone:</strong> ${phone || 'N/A'}<br>
+             <strong>Role:</strong> ${role}</p>
+             <p><strong>Message:</strong><br>${message}</p>`,
     };
 
     await transporter.sendMail(mailOptions);
