@@ -84,7 +84,7 @@ The design system is governed by customized CSS custom properties:
 1. **Static Hosting**: Upload all files to any web server or static hosting provider (e.g., Cloudflare Pages, Vercel, Netlify, AWS S3 / CloudFront, Firebase Hosting, or cPanel/Apache/Nginx).
 2. **Domain Mapping**: Ensure `index.html` is configured as the default directory index.
 3. **Form Integration**: Replace the demo submission timeout in the contact forms with your live webhook, CRM endpoint, or form provider (e.g., Formspree, Web3Forms, HubSpot, or AWS Lambda).
-4. **WhatsApp Number**: WhatsApp FAB and header links are pre-configured to `https://wa.me/message/P5FRBN6SC7QXM1`.
+4. **WhatsApp Number**: WhatsApp FAB and header links are pre-configured to `https://wa.me/18723786305`.
 
 ---
 
