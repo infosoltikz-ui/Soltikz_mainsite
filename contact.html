@@ -4675,17 +4675,49 @@
             sbtn.disabled = true;
           }
 
-          setTimeout(function () {
+          var roleSelect = form.querySelector('#fr');
+          var formData = {
+            name: n,
+            email: em,
+            phone: form.querySelector('#fp') ? form.querySelector('#fp').value.trim() : '',
+            role: roleSelect ? roleSelect.value : '',
+            message: msg
+          };
+
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          })
+          .then(function(res) {
+            return res.json();
+          })
+          .then(function(data) {
             if (sbtn) {
               sbtn.classList.remove('is-loading');
               sbtn.disabled = false;
             }
             if (feedback) {
               feedback.className = 'f-feedback success';
-              feedback.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><span>Thank you, <b>' + n.split(' ')[0] + '</b>! Your message has been sent successfully. A specialist will review your request and reply within one business day.</span>';
+              feedback.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><span>Thank you, <b>' + n.split(' ')[0] + '</b>! Your message has been sent successfully.</span>';
             }
             form.reset();
-          }, 750);
+
+            // Open WhatsApp with pre-filled message
+            var waText = "Hi SolTikz team,\n\nName: " + formData.name + "\nEmail: " + formData.email + "\nRole: " + formData.role + "\n\nMessage: " + formData.message;
+            var waUrl = "https://wa.me/18723786305?text=" + encodeURIComponent(waText);
+            window.open(waUrl, '_blank');
+          })
+          .catch(function(err) {
+            if (sbtn) {
+              sbtn.classList.remove('is-loading');
+              sbtn.disabled = false;
+            }
+            if (feedback) {
+              feedback.className = 'f-feedback error';
+              feedback.innerHTML = '<span>Sorry, there was an error sending your message. Please try WhatsApp directly.</span>';
+            }
+          });
         });
 
         form.querySelectorAll('input, select, textarea').forEach(function (input) {
