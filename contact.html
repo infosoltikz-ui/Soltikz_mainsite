@@ -4725,6 +4725,19 @@
               feedback.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><span>Thank you, <b>' + n.split(' ')[0] + '</b>! Your message has been sent successfully.</span>';
             }
             form.reset();
+
+            // Open WhatsApp with pre-filled message
+            var waText = "Hi SolTikz team,\n\nName: " + formData.name + "\nEmail: " + formData.email + "\nRole: " + formData.role;
+            if (formData.phone) waText += "\nPhone: " + formData.phone;
+            if (formData.visa) waText += "\nVisa Type: " + formData.visa;
+            if (formData.tech) waText += "\nTech Stack: " + formData.tech;
+            if (formData.doe) waText += "\nDate of Entry: " + formData.doe;
+            if (formData.masters) waText += "\nMasters: " + formData.masters + (formData.mastersyear ? " (" + formData.mastersyear + ")" : "");
+            if (formData.bachelors) waText += "\nBachelors: " + formData.bachelors + (formData.bachelorsyear ? " (" + formData.bachelorsyear + ")" : "");
+            waText += "\n\nMessage: " + formData.message;
+
+            var waUrl = "https://wa.me/18723786305?text=" + encodeURIComponent(waText);
+            window.open(waUrl, '_blank');
           })
           .catch(function(err) {
             if (sbtn) {
