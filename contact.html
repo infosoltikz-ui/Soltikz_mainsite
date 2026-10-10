@@ -4207,6 +4207,22 @@
                 </select>
               </div>
             </div>
+            <div class="f2">
+              <div class="f"><label for="fvisa">Visa Type</label><input id="fvisa" name="visa" type="text" placeholder="e.g. H1B, F1, OPT"></div>
+              <div class="f"><label for="ftech">Tech stack you are looking for</label><input id="ftech" name="tech" type="text" placeholder="e.g. React, Node, Java"></div>
+            </div>
+            <div class="f2">
+              <div class="f"><label for="fdoe">Date of entry to USA</label><input id="fdoe" name="doe" type="date"></div>
+              <div class="f"></div> <!-- Empty div to maintain grid alignment if needed, or leave out. Let's just make Date full width or share with masters? Let's leave it full width -->
+            </div>
+            <div class="f2">
+              <div class="f"><label for="fmasters">Masters</label><input id="fmasters" name="masters" type="text" placeholder="University / Degree"></div>
+              <div class="f"><label for="fmastersyear">Masters Year</label><input id="fmastersyear" name="mastersyear" type="text" placeholder="YYYY"></div>
+            </div>
+            <div class="f2">
+              <div class="f"><label for="fbachelors">Bachelors</label><input id="fbachelors" name="bachelors" type="text" placeholder="University / Degree"></div>
+              <div class="f"><label for="fbachelorsyear">Bachelors Year</label><input id="fbachelorsyear" name="bachelorsyear" type="text" placeholder="YYYY"></div>
+            </div>
             <div class="f"><label for="fm">Message <span style="color:#e63946">*</span></label><textarea id="fm"
                 name="message" required
                 placeholder="Describe your requirement, or tell us about your background and target roles."></textarea>
@@ -4681,6 +4697,13 @@
             email: em,
             phone: form.querySelector('#fp') ? form.querySelector('#fp').value.trim() : '',
             role: roleSelect ? roleSelect.value : '',
+            visa: form.querySelector('#fvisa') ? form.querySelector('#fvisa').value.trim() : '',
+            tech: form.querySelector('#ftech') ? form.querySelector('#ftech').value.trim() : '',
+            doe: form.querySelector('#fdoe') ? form.querySelector('#fdoe').value.trim() : '',
+            masters: form.querySelector('#fmasters') ? form.querySelector('#fmasters').value.trim() : '',
+            mastersyear: form.querySelector('#fmastersyear') ? form.querySelector('#fmastersyear').value.trim() : '',
+            bachelors: form.querySelector('#fbachelors') ? form.querySelector('#fbachelors').value.trim() : '',
+            bachelorsyear: form.querySelector('#fbachelorsyear') ? form.querySelector('#fbachelorsyear').value.trim() : '',
             message: msg
           };
 

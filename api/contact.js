@@ -5,7 +5,7 @@ module.exports = async function (req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, email, phone, role, message } = req.body;
+  const { name, email, phone, role, visa, tech, doe, masters, mastersyear, bachelors, bachelorsyear, message } = req.body;
 
   try {
     const user = (process.env.SMTP_USER || '').trim();
@@ -51,6 +51,26 @@ module.exports = async function (req, res) {
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Role</strong></td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${role || '<span style="color:#999">Not specified</span>'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Visa Type</strong></td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${visa || '<span style="color:#999">N/A</span>'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Tech Stack</strong></td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${tech || '<span style="color:#999">N/A</span>'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Date of Entry (USA)</strong></td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${doe || '<span style="color:#999">N/A</span>'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Masters</strong></td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${masters || '<span style="color:#999">N/A</span>'} ${mastersyear ? `(${mastersyear})` : ''}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee;"><strong style="color: #333;">Bachelors</strong></td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #111;">${bachelors || '<span style="color:#999">N/A</span>'} ${bachelorsyear ? `(${bachelorsyear})` : ''}</td>
               </tr>
             </table>
 
