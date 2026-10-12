@@ -1,0 +1,7 @@
+# Robots.txt for SolTikz Consulting
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://soltikz.com/sitemap.xml
