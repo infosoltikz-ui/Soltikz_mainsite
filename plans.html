@@ -4058,50 +4058,154 @@
       border-left: 3px solid var(--accent);
       margin-top: 12px;
     }
-    .feat-check-grid {
+    /* Candidate Marketing Dual Cards (Services Included & Important Terms) */
+    .sect-services-terms {
+      padding: 14px 0 28px;
+      position: relative;
+    }
+    .services-terms-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .dual-cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px 18px;
-      margin-top: 16px;
+      gap: 24px;
+      align-items: stretch;
     }
-    .feat-check-item {
+    .dual-cards-grid > .card {
+      height: 100%;
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: .9rem;
-      color: var(--text);
-      line-height: 1.45;
+      flex-direction: column;
+      padding: 28px 24px;
+      border-radius: var(--r);
+      border: 1px solid var(--hair);
+      background: #ffffff;
+      box-shadow: 0 8px 26px -14px rgba(20, 16, 51, .06);
+      transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s, border-color .35s;
+      box-sizing: border-box;
     }
-    .feat-check-item svg {
-      flex: none;
-      margin-top: 2px;
-      color: var(--accent-d);
+    .dual-cards-grid > .card:hover {
+      border-color: rgba(15, 212, 220, .45);
+      box-shadow: 0 20px 42px -16px rgba(20, 16, 51, .13);
     }
-    .terms-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 11px 0;
-      border-bottom: 1px solid var(--line);
+    .card-head-block {
+      margin-bottom: 18px;
+    }
+    .card-head-block .card__ico {
+      margin-bottom: 14px;
+    }
+    .card-head-block h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .card-head-block p {
       font-size: .88rem;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.5;
+      margin: 0;
+      min-height: 42px;
     }
-    .terms-item:last-child {
+    /* Left card: 8 items arranged in 4 equal rows */
+    .services-items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 10px;
+      flex: 1;
+    }
+    .services-pill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--soft);
+      border: 1px solid var(--hair);
+      border-radius: 11px;
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      transition: all .2s ease;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .services-pill-item:hover {
+      background: #fff;
+      border-color: rgba(15, 212, 220, .5);
+      box-shadow: 0 4px 12px -3px rgba(15, 212, 220, .16);
+      transform: translateY(-2px);
+    }
+    .services-pill-item .ico {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent-d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+    /* Right card: 4 terms arranged in 4 equal rows */
+    .terms-items-list {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 6px;
+      flex: 1;
+    }
+    .terms-row-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--hair);
+      font-size: .83rem;
+      color: var(--muted);
+      line-height: 1.48;
+      box-sizing: border-box;
+    }
+    .terms-row-item:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
-    .terms-item svg {
-      flex: none;
-      margin-top: 3px;
+    .terms-row-item .ico {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-soft);
       color: var(--accent-d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      margin-top: 2px;
     }
-    .terms-item b {
-      color: var(--text);
+    .terms-row-item b {
+      color: var(--ink);
+      font-weight: 700;
     }
-    @media (max-width: 768px) {
-      .feat-check-grid {
+    @media (max-width: 960px) {
+      .dual-cards-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .card-head-block p {
+        min-height: auto;
+      }
+    }
+    @media (max-width: 580px) {
+      .services-items-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .dual-cards-grid > .card {
+        padding: 22px 18px;
       }
       .m-item {
         flex-direction: column;
@@ -4413,188 +4517,6 @@
           End-to-end job search acceleration with milestone-based payments. From professional profile repositioning and active employer marketing to interview coaching, offer negotiation, and placement assistance.
         </p>
       </div>
-
-      <!-- ROW 1: PAYMENT STRUCTURE & CALCULATION CLARITY -->
-      <div class="g2" style="gap: 32px; align-items: stretch; margin-bottom: 32px;">
-        <!-- Left: Milestone Payment Schedule -->
-        <article class="plan hi rv" style="padding: 36px 32px; height: 100%; display: flex; flex-direction: column;">
-          <span class="plan__flag">Core Service · Milestone-Based</span>
-          <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 1.45rem; margin-bottom: 8px;">Payment Structure</h3>
-            <p style="color: var(--muted); font-size: 0.92rem; margin: 0;">Milestone payments are made strictly as verified campaign results are achieved.</p>
-          </div>
-
-          <div class="milestone-list" style="flex: 1;">
-            <div class="m-item">
-              <div class="m-info">
-                <h4>Initial enrollment fee</h4>
-                <p>Profile assessment, resume engineering &amp; campaign setup</p>
-              </div>
-              <div class="m-val">$150</div>
-            </div>
-
-            <div class="m-item">
-              <div class="m-info">
-                <h4>Upon first 5 interview calls</h4>
-                <p>Verified screening &amp; technical client interviews secured</p>
-              </div>
-              <div class="m-val">$750</div>
-            </div>
-
-            <div class="m-item">
-              <div class="m-info">
-                <h4>Upon next 5 interview calls</h4>
-                <p>Reaching 10 cumulative verified interview opportunities</p>
-              </div>
-              <div class="m-val">$600</div>
-            </div>
-
-            <div class="m-item">
-              <div class="m-info">
-                <h4>Background verification (BGV)</h4>
-                <p>Upon formal job offer release &amp; BGV initiation</p>
-              </div>
-              <div class="m-val">$2,500</div>
-            </div>
-
-            <div class="m-total">
-              <div class="m-total-row top">
-                <span style="font-weight: 700; color: var(--ink); font-size: 0.95rem;">Total consultancy fee</span>
-                <b style="font-size: 1.15rem; color: var(--accent-d); text-align:right;">15% of candidate’s gross annual salary</b>
-              </div>
-              <div class="m-total-row bot">
-                <span style="font-size: 0.88rem; color: var(--muted);">Remaining balance</span>
-                <b style="font-size: 0.95rem; color: var(--text); text-align:right;">Payable within 5 months after joining</b>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 24px;">
-            <a class="btn btn-a" href="contact.html" style="justify-content:center; width:100%; font-size: 1rem; padding: 15px 24px;">Apply for screening <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <p style="text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 10px; margin-bottom: 0;">
-              * All milestones paid ($4,000 total) are 100% credited toward your 15% final consultancy fee.
-            </p>
-          </div>
-        </article>
-
-        <!-- Right: Calculation & Balance Stacked Cards -->
-        <div class="rv d1" style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
-          <!-- Card 1: How Final Fee Is Calculated -->
-          <article class="card tilt" style="flex: 1; padding: 32px 28px; display:flex; flex-direction:column; justify-content:center;">
-            <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg></div>
-            <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 12px;">How the Final Fee Is Calculated</h3>
-            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
-              The total consultancy fee is strictly <b>15% of the candidate's gross annual salary</b> offered by the employer.
-            </p>
-            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
-              <b>100% Milestone Adjustment:</b> All payments made at earlier stages — including initial enrollment ($150), interview-call milestones ($750 + $600), and BGV ($2,500) — are fully credited and subtracted from the total 15% consultancy fee.
-            </p>
-            <div class="calc-box">
-              <b>Example:</b> On a $100,000 offer (15% fee = $15,000), earlier milestone payments of $4,000 are deducted, leaving an adjusted balance of $11,000.
-            </div>
-            <p style="font-size: 0.8rem; color: var(--muted); margin: 10px 0 0;">Applicable taxes, if any, will be charged separately and are not included in the 15% fee.</p>
-          </article>
-
-          <!-- Card 2: Payment of Remaining Balance -->
-          <article class="card tilt d1" style="flex: 1; padding: 32px 28px; display:flex; flex-direction:column; justify-content:center;">
-            <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2" />
-                <line x1="2" y1="10" x2="22" y2="10" />
-              </svg></div>
-            <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 12px;">Payment of the Remaining Balance</h3>
-            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
-              After the candidate joins the employer, any outstanding balance must be paid in agreed monthly installments and cleared within <b>five (5) months</b> of the joining date.
-            </p>
-            <div class="calc-box">
-              <b>Zero Pressure Before Paycheck:</b> Monthly installments only commence after you have actively started your new role and received your compensation.
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- ROW 2: SERVICES INCLUDED & IMPORTANT TERMS -->
-      <div class="g2 rv d2" style="gap: 32px;">
-        <!-- Card 3: Services Included -->
-        <article class="card tilt" style="padding: 32px 28px;">
-          <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg></div>
-          <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 8px;">Services Included</h3>
-          <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px;">Everything required to represent, position, and convert candidate profiles across US tech and healthcare markets:</p>
-          <div class="feat-check-grid">
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Resume review &amp; profile positioning</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Active daily candidate marketing</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Job-submission &amp; application support</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Interview-call coordination</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>1-on-1 interview preparation</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Recruiter &amp; employer follow-up</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Background-verification (BGV) support</span>
-            </div>
-            <div class="feat-check-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Offer negotiation &amp; onboarding</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 4: Important Terms -->
-        <article class="card tilt d1" style="padding: 32px 28px;">
-          <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <path d="m9 12 2 2 4-4" />
-            </svg></div>
-          <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 8px;">Important Terms &amp; Transparency</h3>
-          <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px;">Our commitments and standards governing candidate marketing:</p>
-          <div style="display:flex; flex-direction:column;">
-            <div class="terms-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <div><b>Interview Call Definition:</b> An “interview call” represents a verified screening or technical interview opportunity received through our direct marketing efforts.</div>
-            </div>
-            <div class="terms-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <div><b>Selective Participation:</b> Program participation does not guarantee employment offers or specific timelines; final hiring decisions rest with employer organizations.</div>
-            </div>
-            <div class="terms-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <div><b>Written Formal Agreement:</b> The complete payment schedule, milestones, and candidate responsibilities are formalized in a written agreement before enrollment.</div>
-            </div>
-            <div class="terms-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <div><b>Refund &amp; Cancellation:</b> Payments made are governed by the transparent refund and cancellation terms clearly stated in your written service agreement.</div>
-            </div>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -4673,6 +4595,96 @@
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANDIDATE MARKETING: SERVICES INCLUDED & IMPORTANT TERMS -->
+  <section class="sect-services-terms" id="services-terms">
+    <div class="services-terms-wrap">
+      <div class="dual-cards-grid rv d2">
+        <!-- Card 1: Services Included -->
+        <article class="card tilt">
+          <div class="card-head-block">
+            <div class="card__ico lift"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg></div>
+            <h3 class="lift-s">Services Included</h3>
+            <p>Everything required to represent, position, and convert candidate profiles across US tech and healthcare markets:</p>
+          </div>
+
+          <div class="services-items-grid">
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Resume review &amp; profile positioning</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Active daily candidate marketing</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Job-submission &amp; application support</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Interview-call coordination</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>1-on-1 interview preparation</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Recruiter &amp; employer follow-up</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Background-verification (BGV) support</span>
+            </div>
+            <div class="services-pill-item">
+              <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span>Offer negotiation &amp; onboarding</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Important Terms & Transparency -->
+        <article class="card tilt d1">
+          <div class="card-head-block">
+            <div class="card__ico lift"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg></div>
+            <h3 class="lift-s">Important Terms &amp; Transparency</h3>
+            <p>Our commitments and standards governing candidate marketing:</p>
+          </div>
+
+          <div class="terms-items-list">
+            <div class="terms-row-item">
+              <div class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <div><b>Interview Call Definition:</b> An “interview call” represents a verified screening or technical interview opportunity received through our direct marketing efforts.</div>
+            </div>
+            <div class="terms-row-item">
+              <div class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <div><b>Selective Participation:</b> Program participation does not guarantee employment offers or specific timelines; final hiring decisions rest with employer organizations.</div>
+            </div>
+            <div class="terms-row-item">
+              <div class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <div><b>Written Formal Agreement:</b> The complete payment schedule, milestones, and candidate responsibilities are formalized in a written agreement before enrollment.</div>
+            </div>
+            <div class="terms-row-item">
+              <div class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <div><b>Refund &amp; Cancellation:</b> Payments made are governed by the transparent refund and cancellation terms clearly stated in your written service agreement.</div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
