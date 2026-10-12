@@ -58,7 +58,7 @@
       --hdr: 76px;
       --r: 20px;
       --r-s: 12px;
-      --sect: 42px;
+      --sect: 24px;
 
       --shadow: 0 30px 70px -40px rgba(20, 16, 51, .42);
       --shadow-lg: 0 50px 110px -50px rgba(6, 4, 40, .6);
@@ -124,7 +124,7 @@
     }
 
     .sect-sm {
-      padding: 28px 0;
+      padding: 16px 0;
       position: relative
     }
 
@@ -962,12 +962,12 @@
 
     .hero__in {
       max-width: 940px;
-      padding: 56px 0 54px
+      padding: 42px 0 24px
     }
 
     .hero--page .hero__in {
       max-width: 860px;
-      padding: 60px 0 52px
+      padding: 38px 0 20px
     }
 
     .kicker {
@@ -2191,7 +2191,7 @@
    ============================================================ */
     @media(max-width:1180px) {
       :root {
-        --sect: 34px;
+        --sect: 18px;
         --gut: 22px
       }
 
@@ -2296,7 +2296,7 @@
 
     @media(max-width:768px) {
       :root {
-        --sect: 26px;
+        --sect: 14px;
         --gut: 16px;
         --hdr: 58px
       }
@@ -2363,11 +2363,11 @@
       }
 
       .hero__in {
-        padding: 44px 0 38px
+        padding: 34px 0 20px
       }
 
       .hero--page .hero__in {
-        padding: 48px 0 42px
+        padding: 32px 0 18px
       }
 
       .kicker {
@@ -3898,6 +3898,129 @@
         transform: rotate(360deg)
       }
     }
+
+    /* Milestone payment schedule & plan positioning */
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .m-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: var(--soft);
+      border-radius: 12px;
+      border: 1px solid var(--hair);
+      transition: .2s ease;
+    }
+    .m-item:hover {
+      border-color: rgba(15,212,220,.35);
+      background: #fff;
+      box-shadow: 0 4px 14px -4px rgba(15,212,220,.12);
+    }
+    .m-info h4 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+    .m-info p {
+      font-size: .8rem;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+    .m-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.02em;
+    }
+    .m-total {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(15,212,220,.09), rgba(26,17,128,.04));
+      border: 1.5px solid rgba(15,212,220,.35);
+      margin-top: 6px;
+    }
+    .m-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .m-total-row.top {
+      margin-bottom: 10px;
+    }
+    .m-total-row.bot {
+      padding-top: 10px;
+      border-top: 1px dashed rgba(15,212,220,.35);
+    }
+    .calc-box {
+      background: var(--soft);
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: .84rem;
+      color: var(--text);
+      border-left: 3px solid var(--accent);
+      margin-top: 12px;
+    }
+    .feat-check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 18px;
+      margin-top: 16px;
+    }
+    .feat-check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .feat-check-item svg {
+      flex: none;
+      margin-top: 2px;
+      color: var(--accent-d);
+    }
+    .terms-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .terms-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .terms-item svg {
+      flex: none;
+      margin-top: 3px;
+      color: var(--accent-d);
+    }
+    .terms-item b {
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .feat-check-grid {
+        grid-template-columns: 1fr;
+      }
+      .m-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .m-val {
+        align-self: flex-end;
+      }
+    }
   </style>
 </head>
 
@@ -3908,10 +4031,10 @@
       <span class="spark"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
           <path d="m12 2 2.2 6.1L20 10.3l-5.8 2.2L12 18.6l-2.2-6.1L4 10.3l5.8-1.8z" />
         </svg></span>
-      <span class="rail-lg"><b>ResumeIQ</b> — our AI resume tool, now $13.99/month. ATS scoring, JD rewriting and cover
+      <span class="rail-lg"><b>ResumeBuilderOne</b> — our AI resume tool, now $13.99/month. ATS scoring, JD rewriting and cover
         letters.</span>
-      <span class="rail-sm"><b>ResumeIQ</b> — AI resume tool, $13.99/mo</span>
-      <a href="contact.html">Subscribe <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      <span class="rail-sm"><b>ResumeBuilderOne</b> — AI resume tool, $13.99/mo</span>
+      <a href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">Subscribe <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg></a>
@@ -3986,12 +4109,12 @@
                       stroke-linecap="round" stroke-linejoin="round">
                       <path d="M20 6 9 17l-5-5" />
                     </svg></span><span><strong>Profile Screening &amp; Shortlisting</strong><small>We only market what
-                      we can place</small></span></a><a class="ditem " href="resumeiq.html"><span class="dico"><svg
+                      we can place</small></span></a><a class="ditem " href="https://www.resumebuilderone.com/" target="_blank" rel="noopener"><span class="dico"><svg
                       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
                       stroke-linecap="round" stroke-linejoin="round">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                       <path d="M14 2v6h6M9 15l2 2 4-4" />
-                    </svg></span><span><strong>ResumeIQ — AI Resume Tool</strong><small>ATS score, JD rewrite, cover
+                    </svg></span><span><strong>ResumeBuilderOne — AI Resume Tool</strong><small>ATS score, JD rewrite, cover
                       letters</small></span></a><a class="ditem b" href="services.html#staffing"><span class="dico"><svg
                       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
                       stroke-linecap="round" stroke-linejoin="round">
@@ -4018,7 +4141,7 @@
                   </svg></a></div>
             </div>
           </div>
-          <div class="mi"><a href="resumeiq.html">ResumeIQ</a></div>
+          <div class="mi"><a href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">ResumeBuilderOne</a></div>
           <div class="mi"><a href="plans.html" class="on">Plans</a></div>
           <div class="mi"><a href="contact.html">Contact</a></div>
         </nav>
@@ -4079,14 +4202,14 @@
         <div class="ssub">
           <a href="services.html#marketing">Full-Time Job Marketing</a>
           <a href="services.html#screening">Profile Screening &amp; Shortlisting</a>
-          <a href="resumeiq.html">ResumeIQ — AI Resume Tool</a>
+          <a href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">ResumeBuilderOne — AI Resume Tool</a>
           <a href="services.html#staffing">IT Staffing &amp; Consulting</a>
           <a href="services.html#training">Technology Training</a>
           <a href="healthcare.html">Healthcare IT &amp; Informatics</a>
           <a href="services.html#study">Study Abroad · Day 1 CPT · Transitions</a>
         </div>
       </div>
-      <div class="sgroup"><a href="resumeiq.html">ResumeIQ</a></div>
+      <div class="sgroup"><a href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">ResumeBuilderOne</a></div>
       <div class="sgroup"><a href="plans.html" class="on">Plans</a></div>
       <div class="sgroup"><a href="contact.html">Contact</a></div>
 
@@ -4113,11 +4236,11 @@
       <div class="hero__in">
         <span class="kicker"><i></i> Plans</span>
         <h1>Simple plans.<br>Clear <span class="grad">outcomes.</span></h1>
-        <p class="hero__sub">Choose the level of support that matches where you are. Every plan includes ResumeIQ
+        <p class="hero__sub">Choose the level of support that matches where you are. Every plan includes ResumeBuilderOne
           access, a named point of contact and full submission transparency. No hidden fees, no surprise charges after
           you sign.</p>
         <div class="btns"><a class="btn btn-a" href="#"
-            onclick="document.querySelector('.plans').scrollIntoView({behavior:'smooth'});return false">Compare plans
+            onclick="document.getElementById('plans-overview').scrollIntoView({behavior:'smooth'});return false">Compare plans
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
@@ -4125,187 +4248,267 @@
       </div>
     </div>
   </section>
-  <section class="sect">
+
+  <section class="sect" id="plans-overview">
     <div class="wrap">
 
-      <!-- RESUMEIQ SUBSCRIPTION -->
-      <div class="pgroup rv" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-        <h3>ResumeIQ subscription</h3>
-        <span style="max-width: 500px;">Self-serve access to the AI resume tool. Cancel any time.</span>
-      </div>
-      <div class="badges rv" style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-        <span class="badge l"><i></i> AI-Powered</span>
-        <span class="badge l"><i></i> ATS-Optimised</span>
-        <span class="badge l"><i></i> Recruiter Approved</span>
-      </div>
-
-      <div class="plans" style="margin-top:26px; grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto;">
-        <article class="plan hi rv d1">
-          <h3>Pro</h3>
-          <p class="plan__for">For an active job search where you're applying every day.</p>
-          <div class="plan__p">$13.99<small> / month</small></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>AI resume optimisation &amp; ATS checking</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Unlimited JD-based rewriting</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Real-time writing suggestions</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Cover letter builder</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>All 5+ professional templates</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>PDF &amp; DOCX export</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Version management per role</li>
-          </ul>
-          <a class="btn btn-a" href="contact.html" style="justify-content:center">Get started</a>
-      </div>
-
-      <!-- MARKETING PLANS -->
-      <div class="pgroup rv" style="margin-top:48px">
-        <h3>Full-Time Candidate Marketing Program</h3>
-        <p style="color:var(--muted);max-width:800px;margin-top:12px;font-size:1.05rem;line-height:1.6">Our Full-Time
-          Marketing Program provides comprehensive support throughout your job search, from profile preparation and
-          active marketing to interview coordination and placement assistance.</p>
-      </div>
-
-      <div class="plans rv" style="grid-template-columns: 1fr; max-width: 800px; margin: 24px auto 0;">
-        <article class="plan hi" style="padding: 32px;">
-          <span class="plan__flag">Core Service</span>
-          <h3 style="margin-bottom: 32px;">Payment Structure</h3>
-
-          <div style="display:flex; flex-direction:column; gap:16px;">
-            <div
-              style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:12px;">
-              <span>Initial enrollment fee</span>
-              <b style="font-size: 1.1rem; color: var(--ink);">$150</b>
+      <!-- RESUMEBUILDERONE PRO SHOWCASE -->
+      <div class="pband rv" style="margin-bottom: 56px;">
+        <div class="g2" style="gap:56px;align-items:center">
+          <div>
+            <span class="ptag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m12 2 2.2 6.1L20 10.3l-5.8 2.2L12 18.6l-2.2-6.1L4 10.3l5.8-1.8z" />
+              </svg> AI-Powered · ATS-Optimised · Recruiter Approved</span>
+            <h2>ResumeBuilderOne Pro</h2>
+            <p style="margin-top:18px; font-size:1.02rem; line-height:1.65; color:#C4BEEA">
+              Self-serve access to our in-house AI resume engine. Build ATS-readable, role-specific resumes from genuine experience and dynamically re-align them to every job description in minutes.
+            </p>
+            <div class="price" style="margin:22px 0 8px">
+              <b>$13.99</b><span>/ month</span><em>Cancel any time</em>
             </div>
-            <div
-              style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:16px;">
-              <span>Upon receiving the first 5 interview calls</span>
-              <b style="font-size: 1.1rem; color: var(--ink);">$750</b>
-            </div>
-            <div
-              style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:16px;">
-              <span>Upon receiving the next 5 interview calls</span>
-              <b style="font-size: 1.1rem; color: var(--ink);">$600</b>
-            </div>
-            <div
-              style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:16px;">
-              <span>Upon initiation of background verification (BGV)</span>
-              <b style="font-size: 1.1rem; color: var(--ink);">$2,500</b>
-            </div>
-            <div
-              style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:16px;">
-              <span>Total consultancy fee</span>
-              <b style="font-size: 1.1rem; color: var(--ink); text-align:right;">15% of the candidate’s gross annual
-                salary</b>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span>Remaining balance</span>
-              <b style="font-size: 1.1rem; color: var(--ink); text-align:right;">Payable within 5 months after
-                joining</b>
+            <p style="font-size:.9rem;margin-top:6px;color:#9B94D6">Full access. No setup fee. Included free with our Full-Time Candidate Marketing Program.</p>
+            <div class="btns" style="margin-top:26px">
+              <a class="btn btn-a" href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">Get started — $13.99 <svg width="15" height="15"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg></a>
+              <a class="btn btn-g" href="resumeiq.html">See how it works</a>
             </div>
           </div>
-          <div style="margin-top:24px; display:flex; justify-content:center;">
-            <a class="btn btn-a" href="contact.html" style="justify-content:center; width:100%; max-width: 320px;">Apply
-              for screening</a>
-          </div> <!-- Program Details -->
-          <div class="pgroup rv"
-            style="margin-top: 32px; text-align: left; max-width: 1040px; margin-left: auto; margin-right: auto;">
 
-            <div class="g2" style="gap: 32px; margin-bottom: 32px;">
-              <article class="card tilt">
-                <div class="card__ico lift"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  </svg></div>
-                <h3 class="lift-s">How the Final Fee Is Calculated</h3>
-                <p>The total consultancy fee is 15% of the candidate’s gross annual salary offered by the employer. All
-                  payments made at earlier stages—including enrollment, interview-call milestones and BGV—will be
-                  adjusted toward the total consultancy fee.</p>
-                <p style="margin-bottom: 0;">Applicable taxes, if any, will be charged separately and are not included
-                  in the 15% consultancy fee.</p>
-              </article>
-
-              <article class="card tilt d1">
-                <div class="card__ico lift"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="5" width="20" height="14" rx="2" />
-                    <line x1="2" y1="10" x2="22" y2="10" />
-                  </svg></div>
-                <h3 class="lift-s">Payment of the Remaining Balance</h3>
-                <p style="margin-bottom: 0;">After the candidate joins the employer, any outstanding balance must be
-                  paid in agreed monthly installments and cleared within five months of the joining date.</p>
-              </article>
-            </div>
-
-            <div class="g2" style="gap: 32px; margin-bottom: 0;">
-              <article class="card tilt">
-                <div class="card__ico lift"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <div>
+            <div class="ftiles" style="margin-top:0">
+              <div class="ftile"><span class="ftile__i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
-                  </svg></div>
-                <h3 class="lift-s">Services Included</h3>
-                <ul
-                  style="color: var(--muted); line-height: 1.7; padding-left: 20px; margin-top: 16px; margin-bottom: 0; list-style-type: disc;">
-                  <li style="margin-bottom: 8px;">Resume review and professional profile enhancement</li>
-                  <li style="margin-bottom: 8px;">Active marketing of the candidate’s profile</li>
-                  <li style="margin-bottom: 8px;">Job-submission and application support</li>
-                  <li style="margin-bottom: 8px;">Interview-call coordination</li>
-                  <li style="margin-bottom: 8px;">Interview preparation and guidance</li>
-                  <li style="margin-bottom: 8px;">Recruiter and employer follow-up</li>
-                  <li style="margin-bottom: 8px;">Background-verification assistance</li>
-                  <li style="margin-bottom: 0;">Placement and onboarding support</li>
-                </ul>
-              </article>
-
-              <article class="card tilt d1">
-                <div class="card__ico lift"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    <path d="M14 2v6h6M9 15l2 2 4-4" />
+                  </svg></span><b>AI resume optimisation</b><span>Clean, professional, ATS-parseable structure</span></div>
+              <div class="ftile"><span class="ftile__i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg></div>
-                <h3 class="lift-s">Important Terms</h3>
-                <ul
-                  style="color: var(--muted); line-height: 1.7; padding-left: 20px; margin-top: 16px; margin-bottom: 0; list-style-type: disc;">
-                  <li style="margin-bottom: 8px;">An “interview call” means a screening/interview call opportunity
-                    received through our marketing efforts.</li>
-                  <li style="margin-bottom: 8px;">Participation in the program does not guarantee interviews, an
-                    employment offer or placement.</li>
-                  <li style="margin-bottom: 8px;">Payments already made are subject to the refund and cancellation terms
-                    stated in the service agreement.</li>
-                  <li style="margin-bottom: 0;">The complete payment schedule and candidate responsibilities will be
-                    documented in a written agreement before enrollment.</li>
-                </ul>
-              </article>
+                    <path d="M3 3v18h18" />
+                    <path d="m7 15 4-5 3 3 5-7" />
+                  </svg></span><b>ATS score checker</b><span>Instant score with actionable fixes</span></div>
+              <div class="ftile"><span class="ftile__i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.6 13.4 12 22l-9-9V3h10z" />
+                    <circle cx="7.5" cy="7.5" r="1.5" />
+                  </svg></span><b>JD-to-resume alignment</b><span>Points rewritten for each target job</span></div>
+              <div class="ftile"><span class="ftile__i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+                  </svg></span><b>Real-time suggestions</b><span>Stronger phrasing line by line as you write</span></div>
+              <div class="ftile"><span class="ftile__i"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-10 6L2 7" />
+                  </svg></span><b>Cover letter builder</b><span>Custom matched to the same position</span></div>
+              <div class="ftile"><span class="ftile__i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg></span><b>PDF &amp; DOCX export</b><span>Multiple templates and role versioning</span></div>
             </div>
           </div>
+        </div>
       </div>
+
+      <!-- FULL-TIME CANDIDATE MARKETING PROGRAM -->
+      <div class="head wide rv" style="text-align: center; max-width: 860px; margin: 0 auto 36px;">
+        <div class="eyebrow">Comprehensive Career Marketing</div>
+        <h2>Full-Time Candidate Marketing Program</h2>
+        <p class="lede" style="margin-top: 14px;">
+          End-to-end job search acceleration with milestone-based payments. From professional profile repositioning and active employer marketing to interview coaching, offer negotiation, and placement assistance.
+        </p>
+      </div>
+
+      <!-- ROW 1: PAYMENT STRUCTURE & CALCULATION CLARITY -->
+      <div class="g2" style="gap: 32px; align-items: stretch; margin-bottom: 32px;">
+        <!-- Left: Milestone Payment Schedule -->
+        <article class="plan hi rv" style="padding: 36px 32px; height: 100%; display: flex; flex-direction: column;">
+          <span class="plan__flag">Core Service · Milestone-Based</span>
+          <div style="margin-bottom: 20px;">
+            <h3 style="font-size: 1.45rem; margin-bottom: 8px;">Payment Structure</h3>
+            <p style="color: var(--muted); font-size: 0.92rem; margin: 0;">Milestone payments are made strictly as verified campaign results are achieved.</p>
+          </div>
+
+          <div class="milestone-list" style="flex: 1;">
+            <div class="m-item">
+              <div class="m-info">
+                <h4>Initial enrollment fee</h4>
+                <p>Profile assessment, resume engineering &amp; campaign setup</p>
+              </div>
+              <div class="m-val">$150</div>
+            </div>
+
+            <div class="m-item">
+              <div class="m-info">
+                <h4>Upon first 5 interview calls</h4>
+                <p>Verified screening &amp; technical client interviews secured</p>
+              </div>
+              <div class="m-val">$750</div>
+            </div>
+
+            <div class="m-item">
+              <div class="m-info">
+                <h4>Upon next 5 interview calls</h4>
+                <p>Reaching 10 cumulative verified interview opportunities</p>
+              </div>
+              <div class="m-val">$600</div>
+            </div>
+
+            <div class="m-item">
+              <div class="m-info">
+                <h4>Background verification (BGV)</h4>
+                <p>Upon formal job offer release &amp; BGV initiation</p>
+              </div>
+              <div class="m-val">$2,500</div>
+            </div>
+
+            <div class="m-total">
+              <div class="m-total-row top">
+                <span style="font-weight: 700; color: var(--ink); font-size: 0.95rem;">Total consultancy fee</span>
+                <b style="font-size: 1.15rem; color: var(--accent-d); text-align:right;">15% of candidate’s gross annual salary</b>
+              </div>
+              <div class="m-total-row bot">
+                <span style="font-size: 0.88rem; color: var(--muted);">Remaining balance</span>
+                <b style="font-size: 0.95rem; color: var(--text); text-align:right;">Payable within 5 months after joining</b>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <a class="btn btn-a" href="contact.html" style="justify-content:center; width:100%; font-size: 1rem; padding: 15px 24px;">Apply for screening <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p style="text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 10px; margin-bottom: 0;">
+              * All milestones paid ($4,000 total) are 100% credited toward your 15% final consultancy fee.
+            </p>
+          </div>
+        </article>
+
+        <!-- Right: Calculation & Balance Stacked Cards -->
+        <div class="rv d1" style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
+          <!-- Card 1: How Final Fee Is Calculated -->
+          <article class="card tilt" style="flex: 1; padding: 32px 28px; display:flex; flex-direction:column; justify-content:center;">
+            <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg></div>
+            <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 12px;">How the Final Fee Is Calculated</h3>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
+              The total consultancy fee is strictly <b>15% of the candidate's gross annual salary</b> offered by the employer.
+            </p>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
+              <b>100% Milestone Adjustment:</b> All payments made at earlier stages — including initial enrollment ($150), interview-call milestones ($750 + $600), and BGV ($2,500) — are fully credited and subtracted from the total 15% consultancy fee.
+            </p>
+            <div class="calc-box">
+              <b>Example:</b> On a $100,000 offer (15% fee = $15,000), earlier milestone payments of $4,000 are deducted, leaving an adjusted balance of $11,000.
+            </div>
+            <p style="font-size: 0.8rem; color: var(--muted); margin: 10px 0 0;">Applicable taxes, if any, will be charged separately and are not included in the 15% fee.</p>
+          </article>
+
+          <!-- Card 2: Payment of Remaining Balance -->
+          <article class="card tilt d1" style="flex: 1; padding: 32px 28px; display:flex; flex-direction:column; justify-content:center;">
+            <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg></div>
+            <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 12px;">Payment of the Remaining Balance</h3>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--muted); margin-bottom: 12px;">
+              After the candidate joins the employer, any outstanding balance must be paid in agreed monthly installments and cleared within <b>five (5) months</b> of the joining date.
+            </p>
+            <div class="calc-box">
+              <b>Zero Pressure Before Paycheck:</b> Monthly installments only commence after you have actively started your new role and received your compensation.
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ROW 2: SERVICES INCLUDED & IMPORTANT TERMS -->
+      <div class="g2 rv d2" style="gap: 32px;">
+        <!-- Card 3: Services Included -->
+        <article class="card tilt" style="padding: 32px 28px;">
+          <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg></div>
+          <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 8px;">Services Included</h3>
+          <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px;">Everything required to represent, position, and convert candidate profiles across US tech and healthcare markets:</p>
+          <div class="feat-check-grid">
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Resume review &amp; profile positioning</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Active daily candidate marketing</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Job-submission &amp; application support</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Interview-call coordination</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>1-on-1 interview preparation</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Recruiter &amp; employer follow-up</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Background-verification (BGV) support</span>
+            </div>
+            <div class="feat-check-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Offer negotiation &amp; onboarding</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Important Terms -->
+        <article class="card tilt d1" style="padding: 32px 28px;">
+          <div class="card__ico lift" style="margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg></div>
+          <h3 class="lift-s" style="font-size: 1.25rem; margin-bottom: 8px;">Important Terms &amp; Transparency</h3>
+          <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px;">Our commitments and standards governing candidate marketing:</p>
+          <div style="display:flex; flex-direction:column;">
+            <div class="terms-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><b>Interview Call Definition:</b> An “interview call” represents a verified screening or technical interview opportunity received through our direct marketing efforts.</div>
+            </div>
+            <div class="terms-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><b>Selective Participation:</b> Program participation does not guarantee employment offers or specific timelines; final hiring decisions rest with employer organizations.</div>
+            </div>
+            <div class="terms-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><b>Written Formal Agreement:</b> The complete payment schedule, milestones, and candidate responsibilities are formalized in a written agreement before enrollment.</div>
+            </div>
+            <div class="terms-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><b>Refund &amp; Cancellation:</b> Payments made are governed by the transparent refund and cancellation terms clearly stated in your written service agreement.</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
 
-  <section class="sect" id="screening" style="padding-top: 0; margin-top: -32px;">
+  <section class="sect" id="screening" style="padding-top: 0;">
     <div class="wrap">
       <div class="spot rv">
         <span class="spot__tag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -4442,7 +4645,7 @@
           </div>
           <div class="faq"><button class="faq__q">Do you rewrite my resume for each job?</button>
             <div class="faq__a">
-              <p>Yes — every single application. ResumeIQ rewrites your points against that specific job description
+              <p>Yes — every single application. ResumeBuilderOne rewrites your points against that specific job description
                 before it goes out. We restructure and reframe what you have genuinely done; we never add experience you
                 don't have.</p>
             </div>
@@ -4463,7 +4666,7 @@
           <div class="faq"><button class="faq__q">Can I pause or cancel my plan?</button>
             <div class="faq__a">
               <p>Yes. You can pause or cancel your subscription at any time with straightforward notice before your next
-                monthly billing cycle. ResumeIQ subscriptions can be canceled immediately in one click with no questions
+                monthly billing cycle. ResumeBuilderOne subscriptions can be canceled immediately in one click with no questions
                 asked.</p>
             </div>
           </div>
@@ -4472,8 +4675,8 @@
         <div>
           <h4
             style="font-size:.72rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--blue);margin-bottom:18px">
-            ResumeIQ &amp; employers</h4>
-          <div class="faq"><button class="faq__q">Can I use ResumeIQ without a marketing plan?</button>
+            ResumeBuilderOne &amp; employers</h4>
+          <div class="faq"><button class="faq__q">Can I use ResumeBuilderOne without a marketing plan?</button>
             <div class="faq__a">
               <p>Yes. The subscription is standalone and works perfectly well if you're running your own search.
                 Marketing clients get full Pro access bundled in at no extra cost.</p>
@@ -4483,10 +4686,10 @@
             <div class="faq__a">
               <p>It measures how well an applicant tracking system can read and rank your resume — structure, section
                 ordering, keyword coverage and parseability. A strong resume that scores badly often never reaches a
-                human. ResumeIQ shows the score and the specific fixes that would raise it.</p>
+                human. ResumeBuilderOne shows the score and the specific fixes that would raise it.</p>
             </div>
           </div>
-          <div class="faq"><button class="faq__q">Does ResumeIQ write my resume for me from nothing?</button>
+          <div class="faq"><button class="faq__q">Does ResumeBuilderOne write my resume for me from nothing?</button>
             <div class="faq__a">
               <p>No, and deliberately so. It reorganises and reframes experience you actually have. It does not invent
                 employers, dates or projects. A resume that wins an interview you cannot defend costs you more than it
@@ -4605,7 +4808,7 @@
           <ul>
             <li><a href="services.html#marketing">Full-Time Job Marketing</a></li>
             <li><a href="services.html#screening">Profile Screening &amp; Shortlisting</a></li>
-            <li><a href="resumeiq.html">ResumeIQ — AI Resume Tool</a></li>
+            <li><a href="https://www.resumebuilderone.com/" target="_blank" rel="noopener">ResumeBuilderOne — AI Resume Tool</a></li>
             <li><a href="services.html#staffing">IT Staffing &amp; Consulting</a></li>
             <li><a href="services.html#training">Technology Training</a></li>
             <li><a href="healthcare.html">Healthcare IT &amp; Informatics</a></li>
@@ -4641,14 +4844,11 @@
       </div>
 
       <div class="ftr__grp">
-        <div><b>SolTikz LLC</b> United States — staffing, career marketing &amp; ResumeIQ</div>
+        <div><b>SolTikz LLC</b> United States — staffing, career marketing &amp; ResumeBuilderOne</div>
         <div><b>StudyDad Overseas Education Pvt. Ltd.</b> India — <a href="https://studydad.in/" target="_blank"
             rel="noopener" style="color:var(--accent)">studydad.in</a></div>
       </div>
 
-      <div class="wordmark" aria-hidden="true">
-        <img src="image.png" alt="SOLTIKZ" class="wordmark__img" />
-      </div>
 
       <div class="ftr__bot">
         <span>© <span class="yr">2026</span> SolTikz LLC. All rights reserved.</span>
@@ -4697,7 +4897,7 @@
         <h4>1. Overview &amp; Commitment</h4>
         <p>At SolTikz Consulting ("SolTikz", "we", "us", or "our"), we respect your privacy and are committed to
           protecting the personal and professional data you share with us. This Privacy Policy explains how we collect,
-          store, utilize, and protect your information across our website, our ResumeIQ platform, and our recruitment
+          store, utilize, and protect your information across our website, our ResumeBuilderOne platform, and our recruitment
           and job marketing services.</p>
 
         <h4>2. Information We Collect</h4>
@@ -4717,14 +4917,14 @@
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
               stroke-linecap="round">
               <path d="M20 6 9 17l-5-5" />
-            </svg><span><b>ResumeIQ Data:</b> Job descriptions and resumes submitted for AI analysis, keyword
+            </svg><span><b>ResumeBuilderOne Data:</b> Job descriptions and resumes submitted for AI analysis, keyword
               extraction, and document tailoring.</span></li>
         </ul>
 
         <h4>3. How We Use Your Data</h4>
         <p>We use the data collected strictly for legitimate career marketing and recruitment services: assessing
           eligibility for screening, matching qualifications against live job requirements, optimizing resumes via
-          ResumeIQ, communicating application updates, and coordinating interview and onboarding steps. We never sell,
+          ResumeBuilderOne, communicating application updates, and coordinating interview and onboarding steps. We never sell,
           rent, or trade your personal information to third-party data brokers.</p>
 
         <h4>4. Resume Submission Transparency</h4>
@@ -4766,7 +4966,7 @@
       <div class="modal__content">
         <p class="modal__updated">Last Updated: January 2026</p>
         <h4>1. Agreement to Terms</h4>
-        <p>By accessing or using the website, services, and ResumeIQ tool provided by SolTikz Consulting, you agree to
+        <p>By accessing or using the website, services, and ResumeBuilderOne tool provided by SolTikz Consulting, you agree to
           be bound by these Terms of Use and all applicable federal, state, and local laws and regulations.</p>
 
         <h4>2. Career Marketing &amp; Staffing Services</h4>
@@ -4780,8 +4980,8 @@
           strict anti-fabrication standard: we never fabricate experience, invent employers, or falsify work
           authorization status, and candidates agree to uphold the same standard.</p>
 
-        <h4>4. ResumeIQ AI Platform Usage</h4>
-        <p>ResumeIQ is provided on a monthly subscription or bundled service basis. Users receive a non-exclusive,
+        <h4>4. ResumeBuilderOne AI Platform Usage</h4>
+        <p>ResumeBuilderOne is provided on a monthly subscription or bundled service basis. Users receive a non-exclusive,
           non-transferable license to create and optimize resumes and cover letters. Subscriptions may be canceled at
           any time before the next billing cycle.</p>
 

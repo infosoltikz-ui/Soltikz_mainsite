@@ -1,6 +1,6 @@
 # SolTikz Consulting — Web Platform (v4.0 Modernized Edition)
 
-A high-performance, zero-build corporate web platform for **SolTikz Consulting** (Specialized IT & Healthcare Technology Staffing, Full-Time Career Marketing, and ResumeIQ AI Platform).
+A high-performance, zero-build corporate web platform for **SolTikz Consulting** (Specialized IT & Healthcare Technology Staffing, Full-Time Career Marketing, and ResumeBuilderOne AI Platform).
 
 ---
 
@@ -12,9 +12,9 @@ The project is built on a clean, zero-build HTML5 / CSS3 / Vanilla JS architectu
 ├── index.html        # Main Landing Page — Talent Globe, Screening, Core Pillars, Hero Stats
 ├── about.html        # About SolTikz, Executive Team, The SolTikz Standard, Results & Metrics
 ├── services.html     # Full-Time Marketing, Candidate Screening, IT Staffing, Training, StudyDad
-├── resumeiq.html     # ResumeIQ AI Platform — Interactive ATS Simulator Engine & JD Rewriting
+├── resumeiq.html     # ResumeBuilderOne AI Platform — Interactive ATS Simulator Engine & JD Rewriting
 ├── healthcare.html   # Healthcare IT & Informatics Domain Specialization (Epic, Cerner, FHIR)
-├── plans.html        # Pricing Tiers, ResumeIQ Pro, Enterprise Staffing, Comprehensive FAQ
+├── plans.html        # Pricing Tiers, ResumeBuilderOne Pro, Enterprise Staffing, Comprehensive FAQ
 ├── contact.html      # Multi-field Consultation Form with Real-Time Validation & Office Locations
 └── README.md         # Comprehensive System Architecture & Engineering Documentation
 ```
@@ -30,7 +30,7 @@ The project is built on a clean, zero-build HTML5 / CSS3 / Vanilla JS architectu
 
 ### 2. Accessible Legal & Compliance Modal System (All Pages)
 - Replaced dead `#` footer links with a built-in accessible dialog system (`data-open-modal="privacyModal"` and `data-open-modal="termsModal"`).
-- Full legal copy covering candidate data transparency, ResumeIQ processing, non-fabrication ethical standards, and immigration advisory disclaimers.
+- Full legal copy covering candidate data transparency, ResumeBuilderOne processing, non-fabrication ethical standards, and immigration advisory disclaimers.
 - Complete keyboard accessibility (`Escape` to close), backdrop overlay blur, click-outside dismissal, and body scroll lock management.
 
 ### 3. Animated Hero Statistics (`index.html`)
