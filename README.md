@@ -1,6 +1,6 @@
-# SolTikz Consulting — Web Platform (v4.0 Modernized Edition)
+# Soltikz Consulting — Web Platform (v4.0 Modernized Edition)
 
-A high-performance, zero-build corporate web platform for **SolTikz Consulting** (Specialized IT & Healthcare Technology Staffing, Full-Time Career Marketing, and ResumeBuilderOne AI Platform).
+A high-performance, zero-build corporate web platform for **Soltikz Consulting** (Specialized IT & Healthcare Technology Staffing, Full-Time Career Marketing, and ResumeBuilderOne AI Platform).
 
 ---
 
@@ -10,7 +10,7 @@ The project is built on a clean, zero-build HTML5 / CSS3 / Vanilla JS architectu
 
 ```
 ├── index.html        # Main Landing Page — Talent Globe, Screening, Core Pillars, Hero Stats
-├── about.html        # About SolTikz, Executive Team, The SolTikz Standard, Results & Metrics
+├── about.html        # About Soltikz, Executive Team, The Soltikz Standard, Results & Metrics
 ├── services.html     # Full-Time Marketing, Candidate Screening, IT Staffing, Training, StudyDad
 ├── resumeiq.html     # ResumeBuilderOne AI Platform — Interactive ATS Simulator Engine & JD Rewriting
 ├── healthcare.html   # Healthcare IT & Informatics Domain Specialization (Epic, Cerner, FHIR)
@@ -57,7 +57,7 @@ The project is built on a clean, zero-build HTML5 / CSS3 / Vanilla JS architectu
 
 ### 7. Floating UX Enhancements (All Pages)
 - **Back-to-Top Button**: Smoothly appears when scrolling past 350px with one-click animated scroll.
-- **Live WhatsApp FAB**: Pulsing floating button with live tooltip preview ("Chat with us live") linking directly to the SolTikz WhatsApp business line.
+- **Live WhatsApp FAB**: Pulsing floating button with live tooltip preview ("Chat with us live") linking directly to the Soltikz WhatsApp business line.
 
 ### 8. Resolved Developer Placeholders
 - `about.html`: Replaced `[Your name here]` with `Executive Leadership Team`.
@@ -102,4 +102,4 @@ The design system is governed by customized CSS custom properties:
 
 ---
 
-© 2026 SolTikz LLC. All rights reserved. Solution to IT & Healthcare Business.
+© 2026 Soltikz LLC. All rights reserved. Solution to IT & Healthcare Business.

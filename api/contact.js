@@ -22,18 +22,18 @@ module.exports = async function (req, res) {
     });
 
     const mailOptions = {
-      from: `"SolTikz Website" <${user}>`,
+      from: `"Soltikz Website" <${user}>`,
       replyTo: email,
       to: 'info@soltikz.com',
       subject: `New Contact Form Submission from ${name}`,
-      text: `You have received a new message from the SolTikz contact form:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nRole: ${role}\nMessage:\n${message}`,
+      text: `You have received a new message from the Soltikz contact form:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nRole: ${role}\nMessage:\n${message}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
           <div style="background-color: #0A0733; padding: 20px; text-align: center;">
             <h2 style="color: #0FD4DC; margin: 0; font-size: 22px; letter-spacing: 0.5px;">New Contact Request</h2>
           </div>
           <div style="padding: 30px; background-color: #ffffff;">
-            <p style="color: #555; font-size: 15px; margin-top: 0; margin-bottom: 25px;">You have received a new message from the <strong>SolTikz</strong> website.</p>
+            <p style="color: #555; font-size: 15px; margin-top: 0; margin-bottom: 25px;">You have received a new message from the <strong>Soltikz</strong> website.</p>
             
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
@@ -80,7 +80,7 @@ module.exports = async function (req, res) {
             </div>
           </div>
           <div style="background-color: #f4f5f7; padding: 15px; text-align: center; color: #888; font-size: 12px; border-top: 1px solid #eee;">
-            This email was generated automatically by the SolTikz web platform.
+            This email was generated automatically by the Soltikz web platform.
           </div>
         </div>
       `,

@@ -2,7 +2,7 @@
   "name": "soltikz-mainsite",
   "version": "4.0.0",
   "private": true,
-  "description": "SolTikz Consulting Web Platform",
+  "description": "Soltikz Consulting Web Platform",
   "scripts": {
     "dev": "npx serve .",
     "deploy": "npx vercel --prod"
