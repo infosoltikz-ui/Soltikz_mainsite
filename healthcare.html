@@ -2286,28 +2286,106 @@
       transform: scale(1.09)
     }
 
-    /* ---------- reveal ---------- */
-    .rv {
+    /* ============================================================
+       SCROLL REVEAL & DIRECTIONAL ENTRANCE ANIMATIONS
+       Cards & UI animate from side (left/right) and down (bottom-up)
+       ============================================================ */
+    .rv,
+    .rv-up {
       opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .8s cubic-bezier(.4, 0, .2, 1), transform .8s cubic-bezier(.4, 0, .2, 1)
+      transform: translateY(48px);
+      transition: opacity .85s cubic-bezier(0.16, 1, 0.3, 1), transform .85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
-    .rv.on {
-      opacity: 1;
-      transform: none
+    .rv-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity .85s cubic-bezier(0.16, 1, 0.3, 1), transform .85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
-    .rv.d1 {
-      transition-delay: .1s
+    .rv-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity .85s cubic-bezier(0.16, 1, 0.3, 1), transform .85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
-    .rv.d2 {
-      transition-delay: .2s
+    .rv-zoom {
+      opacity: 0;
+      transform: scale(0.92) translateY(30px);
+      transition: opacity .85s cubic-bezier(0.16, 1, 0.3, 1), transform .85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
-    .rv.d3 {
-      transition-delay: .3s
+    /* Staggered cards in 3-column grids: left card from left, middle from down, right from right */
+    .g3 > article:nth-child(3n+1).rv,
+    .g3 > div:nth-child(3n+1).rv {
+      transform: translateX(-50px);
+    }
+
+    .g3 > article:nth-child(3n+2).rv,
+    .g3 > div:nth-child(3n+2).rv {
+      transform: translateY(48px);
+    }
+
+    .g3 > article:nth-child(3n+3).rv,
+    .g3 > div:nth-child(3n+3).rv {
+      transform: translateX(50px);
+    }
+
+    /* Staggered cards in 2-column grids: left from left side, right from right side */
+    .g2 > article:first-child.rv,
+    .g2 > div:first-child.rv,
+    .dual-cards-grid > div:first-child.rv {
+      transform: translateX(-55px);
+    }
+
+    .g2 > article:last-child.rv,
+    .g2 > div:last-child.rv,
+    .dual-cards-grid > div:last-child.rv {
+      transform: translateX(55px);
+    }
+
+    /* Active / revealed state */
+    .rv.on,
+    .rv-up.on,
+    .rv-left.on,
+    .rv-right.on,
+    .rv-zoom.on,
+    .g3 > article.rv.on,
+    .g3 > div.rv.on,
+    .g2 > article.rv.on,
+    .g2 > div.rv.on,
+    .dual-cards-grid > div.rv.on {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Staggered transition delays */
+    .rv.d1, .rv-up.d1, .rv-left.d1, .rv-right.d1 { transition-delay: .09s; }
+    .rv.d2, .rv-up.d2, .rv-left.d2, .rv-right.d2 { transition-delay: .18s; }
+    .rv.d3, .rv-up.d3, .rv-left.d3, .rv-right.d3 { transition-delay: .27s; }
+    .rv.d4, .rv-up.d4, .rv-left.d4, .rv-right.d4 { transition-delay: .36s; }
+    .rv.d5, .rv-up.d5, .rv-left.d5, .rv-right.d5 { transition-delay: .45s; }
+    .rv.d6, .rv-up.d6, .rv-left.d6, .rv-right.d6 { transition-delay: .54s; }
+
+    @media(max-width:768px) {
+      .rv-left,
+      .rv-right,
+      .g3 > article:nth-child(3n+1).rv,
+      .g3 > div:nth-child(3n+1).rv,
+      .g3 > article:nth-child(3n+3).rv,
+      .g3 > div:nth-child(3n+3).rv,
+      .g2 > article:first-child.rv,
+      .g2 > div:first-child.rv,
+      .g2 > article:last-child.rv,
+      .g2 > div:last-child.rv,
+      .dual-cards-grid > div:first-child.rv,
+      .dual-cards-grid > div:last-child.rv {
+        transform: translateY(32px);
+      }
     }
 
     /* ============================================================
@@ -4783,11 +4861,66 @@
         });
       });
 
-      /* ---------- scroll reveal ---------- */
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+      /* ---------- enhanced scroll reveal (side & down animations) ---------- */
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) {
+        // Auto-animate cards inside g2 grids & dual-cards-grid: left from left, right from right
+        document.querySelectorAll('.g2, .dual-cards-grid').forEach(function (g) {
+          if (g.closest('.modal')) return;
+          var items = Array.from(g.children).filter(function (c) {
+            return !c.closest('.modal') && !c.classList.contains('no-rv');
+          });
+          if (items.length === 2) {
+            if (!items[0].classList.contains('rv') && !items[0].classList.contains('rv-left')) {
+              items[0].classList.add('rv-left');
+            }
+            if (!items[1].classList.contains('rv') && !items[1].classList.contains('rv-right')) {
+              items[1].classList.add('rv-right', 'd1');
+            }
+          }
+        });
+
+        // Auto-animate cards inside g3, g4, steps, grid-lines, etc.
+        document.querySelectorAll('.g3, .g4, .steps, .grid-lines, .services-items-grid').forEach(function (g) {
+          if (g.closest('.modal')) return;
+          var items = Array.from(g.children).filter(function (c) {
+            return !c.closest('.modal') && !c.classList.contains('no-rv');
+          });
+          items.forEach(function (item, idx) {
+            if (!item.classList.contains('rv') && !item.classList.contains('rv-up') && !item.classList.contains('rv-left') && !item.classList.contains('rv-right')) {
+              var d = 'd' + Math.min(idx + 1, 6);
+              if (idx % 3 === 0) item.classList.add('rv-left', d);
+              else if (idx % 3 === 1) item.classList.add('rv-up', d);
+              else item.classList.add('rv-right', d);
+            }
+          });
+        });
+
+        // Auto-animate standalone cards, heads, and faqs
+        document.querySelectorAll('.head, .faq, .card, .gcard').forEach(function (el) {
+          if (el.closest('.modal') || el.closest('.hero__in')) return;
+          if (!el.classList.contains('rv') && !el.classList.contains('rv-up') && !el.classList.contains('rv-left') && !el.classList.contains('rv-right')) {
+            el.classList.add('rv-up');
+          }
+        });
+
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('on');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.rv, .rv-up, .rv-left, .rv-right, .rv-zoom').forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.rv, .rv-up, .rv-left, .rv-right, .rv-zoom').forEach(function (el) {
+          el.classList.add('on');
+        });
+      }
 
       /* ---------- journey rail ---------- */
       var rail = document.querySelector('.rail');
